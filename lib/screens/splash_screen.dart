@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/models/cars.dart';
 import 'package:store_app/screens/home_screen.dart';
 
 import '../constants.dart';
+import '../widgets/car_item.dart';
 import 'car_screen.dart';
 
 class SplashScreen extends StatelessWidget {
