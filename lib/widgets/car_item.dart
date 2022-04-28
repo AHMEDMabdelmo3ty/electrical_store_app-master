@@ -1,18 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:store_app/models/list_cars.dart';
+import 'package:store_app/screens/cardetails.dart';
 
 import '../models/cars.dart';
+import '../screens/car_type.dart';
 
 class CarCard extends StatelessWidget {
   final BuildContext context;
-  final carsmodael carm;
+  final campanycarsmodael carm;
   final int rating;
 
   const CarCard({ this.context, this.carm, this.rating});
 
   @override
   Widget build(BuildContext context) {
+
+
+    List carCam=[
+      cartoyota,
+      cartoyota,
+      cartoyota,
+
+    ];
+
     var mq = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.all(2),
@@ -62,37 +74,44 @@ class CarCard extends StatelessWidget {
                   height: 5,
                 ),
 
-                Row(children: [Container(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [Container(
                   padding: EdgeInsets.only(right: 10),
                   child: TextCar(
-                      string: carm.name, color: Colors.black, fontsize: 20),
+                      string: 'شركة : ${carm.name}', color: Colors.black, fontsize: 20),
                 ),
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.only(right: 10),
+                      child:                  Row(
 
-                  Spacer(),
-                  SizedBox(width: 50,),
+                        children: <Widget>[
+                          getStar(rating, 1),
+                          getStar(rating, 2),
+                          getStar(rating, 3),
+                          getStar(rating, 4),
+                          getStar(rating, 5)
+                        ],
+                      ),)
                 ],),
                 SizedBox(
-                  height: 2,
+                  height: 4,
                 ),
                 Container(
                   padding: EdgeInsets.only(right: 10),
-                  child:                  Row(
-                    children: <Widget>[
-                      getStar(rating, 1),
-                      getStar(rating, 2),
-                      getStar(rating, 3),
-                      getStar(rating, 4),
-                      getStar(rating, 5)
-                    ],
-                  ),)
+                  child: TextCar(
+                      string:'وصف الشركه : ${carm.name}', color: Colors.grey[700], fontsize: 15),
+                ),
+
               ],
             ),
           ),
           onTap: () {
-            // Navigator.push(
-            //     context,
-            //     MaterialPageRoute(
-            //         builder: (context) => cartDet(context, carm, 5)));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => ListOfCarScreen(car_list:carCam[0] ,)));
           },
         ),
       ),

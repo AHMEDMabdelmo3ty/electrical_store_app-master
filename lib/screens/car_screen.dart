@@ -29,9 +29,9 @@ class CarScreen extends StatelessWidget {
             height: 2500,
           child: ListView.builder(
           physics: NeverScrollableScrollPhysics(),
-          itemCount: cars.length,
+          itemCount: campany_cars.length,
           itemBuilder: (context, index) {
-            return CarCard(context: context, rating: 5, carm: cars[index],);
+            return CarCard(context: context, rating: 5, carm: campany_cars[index],);
           })),
               ] ),
         )

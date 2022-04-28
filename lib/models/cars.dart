@@ -1,16 +1,16 @@
-class carsmodael {
+class campanycarsmodael {
   final int id;
   final String name, image;
 
-  carsmodael(
+  campanycarsmodael(
       {this.id,
         this.name,
         this.image
       });
 }
-List<carsmodael> cars =
+List<campanycarsmodael> campany_cars =
 [
-  carsmodael(id: 1,image: 'images/car.png',name: 'تويوتا '),
-  carsmodael(id:2,image: 'images/car.png',name: 'نيسان'),
-  carsmodael(id: 3,image: 'images/car.png',name: 'فورد'),
+  campanycarsmodael(id: 1,image: 'images/car.png',name: 'تويوتا '),
+  campanycarsmodael(id:2,image: 'images/car.png',name: 'نيسان'),
+  campanycarsmodael(id: 3,image: 'images/car.png',name: 'فورد'),
 ];
